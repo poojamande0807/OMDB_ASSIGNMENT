@@ -6,11 +6,12 @@ function debounce(func, delay) {
     };
 }
 async function fetchMovies(query) {
-    const apiKey = 'http://www.omdbapi.com/?i=tt3896198&apikey=4d04ee0a';
+    const apiKey = '4d04ee0a'; 
     const response = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`);
     const data = await response.json();
     return data.Search || [];
 }
+
 function showMovies(movies) {
     const resultsBox = document.getElementById('results-box');
     resultsBox.innerHTML = ''; 
